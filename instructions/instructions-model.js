@@ -4,9 +4,10 @@ module.exports = {
     find
 }
 
-async function find() {
-    try {
-        return await db('recipes');
+async function find(id) {
+    try {  
+        return await db('instructions')
+            .where({recipe_id: id})
     } catch (err) {
         throw err;
     }
